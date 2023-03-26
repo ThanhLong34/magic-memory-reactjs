@@ -18,10 +18,12 @@ function App() {
 	const [turns, setTurns] = useState(0);
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
+	const [disabled, setDisabled] = useState(false);
 
 	// Compare 2 selected cards
 	useEffect(() => {
 		if (choiceOne && choiceTwo) {
+			setDisabled(true);
 			if (choiceOne.value === choiceTwo.value) {
 				setCards((prevCards) =>
 					prevCards.map((card) => {
@@ -60,6 +62,7 @@ function App() {
 	}, []);
 
 	const resetTurn = () => {
+		setDisabled(false);
 		setChoiceOne(null);
 		setChoiceTwo(null);
 		setTurns((prevTurn) => prevTurn + 1);
@@ -82,7 +85,11 @@ function App() {
 		<div className="App">
 			<Title>MAGIC MEMORY</Title>
 			<Button onClick={shuffleCards}>New game</Button>
-			<Board cards={cards} onClickCard={handleClickCard} />
+			<Board
+				cards={cards}
+				disabled={disabled}
+				onClickCard={handleClickCard}
+			/>
 		</div>
 	);
 }

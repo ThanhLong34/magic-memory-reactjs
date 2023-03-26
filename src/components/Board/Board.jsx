@@ -4,15 +4,21 @@ import Card from "../Card";
 
 const cx = classNames.bind(styles);
 
-function Board({ cards, onClickCard }) {
+function Board({ cards, disabled, onClickCard }) {
+	const handleClickCard = (card) => {
+		!disabled && onClickCard(card);
+	}
+
 	return (
-		<div className={cx("board")}>
+		<div className={ cx("board", {
+			disabled,
+		})}>
 			{cards &&
 				cards.map((card) => (
 					<Card
 						key={card.id}
 						card={card}
-						onClick={onClickCard}
+						onClick={handleClickCard}
 					/>
 				))}
 		</div>

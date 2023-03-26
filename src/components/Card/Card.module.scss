@@ -8,18 +8,17 @@
 .back {
 	border: 2px solid $whiteColor;
 	border-radius: 6px;
-	cursor: pointer;
-	transition: all ease-in 0.2s;
 }
 
 .front {
-	transform: rotateY(90deg);
 	position: absolute;
+	transform: rotateY(90deg);
+	transition: transform 0.2s ease-in 0s, border-color 0.3s;
 }
 
 .back {
-	transition-delay: 0.2s;
-
+	cursor: pointer;
+	transition: transform 0.2s ease-in 0.2s, border-color 0.3s;
 	&:hover {
 		border-color: $primaryColor;
 	}
