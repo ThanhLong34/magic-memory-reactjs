@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@use "@/assets/styles/variables.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap");
 
 .App {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	font-family: Raleway, sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	background: $backgroundColor;
+	color: $textColor;
 	height: 100vh;
+	padding: 40px;
 }

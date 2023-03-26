@@ -1,0 +1,8 @@
+@use "@/assets/styles/variables.scss" as *;
+
+.title {
+	color: $tertiaryColor;
+	font-weight: bold;
+	font-size: 3rem;
+	margin-bottom: 24px;
+}
