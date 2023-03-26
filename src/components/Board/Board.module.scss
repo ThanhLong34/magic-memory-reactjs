@@ -2,8 +2,11 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 10px;
+	max-width: 600px;
 	margin-top: 32px;
 	margin-bottom: 18px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .disable {
