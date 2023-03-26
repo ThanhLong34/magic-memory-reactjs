@@ -58,6 +58,8 @@ function App() {
 			.map((card, idx) => ({ ...card, id: idx + 1 }));
 
 		setCards(shuffledCards);
+		setChoiceOne(null);
+		setChoiceTwo(null);
 		setTurns(0);
 	}, []);
 
@@ -81,6 +83,7 @@ function App() {
 			}))
 		);
 	};
+
 	return (
 		<div className="App">
 			<Title>MAGIC MEMORY</Title>
@@ -90,6 +93,7 @@ function App() {
 				disabled={disabled}
 				onClickCard={handleClickCard}
 			/>
+			{cards.length > 0 && <Title>Turns: {turns}</Title>}
 		</div>
 	);
 }
