@@ -14,15 +14,13 @@ function Card({ card, onClick }) {
 				flipped: card.flipped,
 			})}
 		>
-			<div>
-				<img className={cx("front")} src={card.src} alt="card front" />
-				<img
-					className={cx("back")}
-					src={"/images/cover.png"}
-					alt="card front"
-					onClick={handleClick}
-				/>
-			</div>
+			<img className={cx("front")} src={card.src} alt="card front" />
+			<img
+				className={cx("back")}
+				src={"/images/cover.png"}
+				alt="card front"
+				onClick={handleClick}
+			/>
 		</div>
 	);
 }

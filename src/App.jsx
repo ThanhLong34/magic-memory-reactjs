@@ -32,11 +32,21 @@ function App() {
 						}
 					})
 				);
+				resetTurn();
 			} else {
-				console.log("not match");
+				setTimeout(() => {
+					setCards((prevCards) =>
+						prevCards.map((card) => {
+							if (card.id === choiceOne.id || card.id === choiceTwo.id) {
+								return { ...card, flipped: false };
+							} else {
+								return card;
+							}
+						})
+					);
+					resetTurn();
+				}, 1200);
 			}
-
-			resetTurn();
 		}
 	}, [choiceOne, choiceTwo]);
 
